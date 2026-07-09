@@ -1,12 +1,319 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>My webpage</title>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DEV[0] | Genesis of Code</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #121414;
+            color: #e2e2e2;
+            -webkit-font-smoothing: antialiased;
+        }
+        .terminal-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+        }
+        .glow-accent {
+            filter: drop-shadow(0 0 8px rgba(204, 255, 0, 0.4));
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#00828b",
+                        "surface-dim": "#121414",
+                        "tertiary-container": "#000000",
+                        "on-primary-fixed": "#1b1b1b",
+                        "surface": "#121414",
+                        "on-tertiary-fixed": "#002022",
+                        "tertiary-fixed": "#7df4ff",
+                        "surface-container": "#1e2020",
+                        "on-primary": "#303030",
+                        "secondary": "#ffffff",
+                        "surface-container-lowest": "#0c0f0f",
+                        "secondary-fixed": "#c3f400",
+                        "on-secondary-container": "#556d00",
+                        "surface-variant": "#333535",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-surface": "#e2e2e2",
+                        "primary-container": "#000000",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#00dbe9",
+                        "tertiary-fixed-dim": "#00dbe9",
+                        "on-secondary-fixed": "#161e00",
+                        "surface-bright": "#37393a",
+                        "background": "#121414",
+                        "surface-container-highest": "#333535",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#cfc4c5",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "primary": "#c6c6c6",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-container-high": "#282a2b",
+                        "on-primary-fixed-variant": "#474747",
+                        "on-secondary": "#283500",
+                        "outline-variant": "#4c4546",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#e2e2e2",
+                        "inverse-primary": "#5e5e5e",
+                        "on-secondary-fixed-variant": "#3c4d00",
+                        "surface-tint": "#c6c6c6",
+                        "secondary-container": "#c3f400",
+                        "outline": "#988e90",
+                        "inverse-on-surface": "#2f3131",
+                        "on-tertiary": "#00363a",
+                        "on-error": "#690005",
+                        "on-background": "#e2e2e2",
+                        "secondary-fixed-dim": "#abd600",
+                        "on-primary-container": "#757575",
+                        "surface-container-low": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["JetBrains Mono"],
+                        "display-lg-mobile": ["JetBrains Mono"],
+                        "code-sm": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["JetBrains Mono"],
+                        "headline-lg": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "code-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
 </head>
-<body>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b-2 border-surface-variant flex justify-between items-center px-4 md:px-margin-desktop py-4 max-w-full mx-auto">
+<div class="font-display-lg text-headline-md tracking-tighter text-secondary">DEV[0]</div>
+<nav class="hidden md:flex items-center gap-base md:gap-xl">
+<a class="font-label-md text-label-md uppercase tracking-widest text-secondary border-b-2 border-secondary pb-1 transition-all duration-300 ease-in-out" href="#">Genesis</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors transition-all duration-300 ease-in-out" href="#">Schedule</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors transition-all duration-300 ease-in-out" href="#">Stack</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-secondary transition-colors transition-all duration-300 ease-in-out" href="#">Join</a>
+</nav>
+<button class="bg-secondary-container text-on-secondary-container px-6 py-2 font-label-md text-label-md uppercase tracking-widest hover:bg-secondary hover:text-on-secondary transition-all duration-300 ease-in-out">
+            Register
+        </button>
+</header>
+<main class="relative pt-20">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col justify-center items-start px-margin-mobile md:px-margin-desktop relative overflow-hidden terminal-grid">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
 
-<h1>Hello, I am Sam!</h1>
-<p>Welcome to my website</p>
+</div>
+<div class="relative z-10 max-w-4xl">
+<div class="inline-flex items-center gap-sm mb-base">
+<span class="w-3 h-3 bg-secondary-container rounded-full animate-pulse"></span>
+<span class="font-label-md text-label-md text-secondary tracking-[0.2em] uppercase">Status: Initialization</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-secondary mb-md">
+                    DEV<span class="text-secondary-container">[</span>0<span class="text-secondary-container">]</span>
+</h1>
+<p class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-lg max-w-2xl leading-tight">
+                    Where everything starts here!
+                </p>
+<div class="flex flex-col md:flex-row gap-gutter">
+<button class="bg-secondary-container text-on-secondary-container px-xl py-md font-label-md text-label-md uppercase tracking-widest hover:scale-105 transition-all duration-300">
+                        Register Now
+                    </button>
+<button class="border border-secondary text-secondary px-xl py-md font-label-md text-label-md uppercase tracking-widest hover:bg-secondary hover:text-on-secondary transition-all duration-300">
+                        View Roadmap
+                    </button>
+</div>
+</div>
+<div class="mt-xl w-full border-t border-surface-variant pt-md flex justify-between items-end">
+<div class="font-code-sm text-code-sm text-on-surface-variant uppercase">
+                    Location: //The_Terminal<br/>
+                    Time: //Zero_Hour
+                </div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-secondary text-headline-lg animate-bounce" data-icon="keyboard_double_arrow_down">keyboard_double_arrow_down</span>
+</div>
+</div>
+</section>
+<!-- Event Details: NU Literate -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface-container-lowest border-y-2 border-surface-variant">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary mb-md">
+                        NU Literate <span class="text-tertiary">_</span>
+</h2>
+<p class="font-body-lg text-body-lg text-primary mb-md leading-relaxed">
+                        At DEV[0], we believe literacy in code is the new foundation of human expression. The NU Literate movement marks a departure from traditional learning, focusing on the raw genesis of logic and the beauty of systematic creation.
+                    </p>
+<div class="space-y-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary-container" data-icon="check_circle">check_circle</span>
+<span class="font-label-md text-label-md uppercase">Zero-Index Philosophy</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary-container" data-icon="check_circle">check_circle</span>
+<span class="font-label-md text-label-md uppercase">Deep Technical Immersion</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary-container" data-icon="check_circle">check_circle</span>
+<span class="font-label-md text-label-md uppercase">Architectural Excellence</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-6 md:col-start-7">
+<div class="relative aspect-video border border-surface-variant bg-surface overflow-hidden group">
+<div class="absolute inset-0 z-10 p-md flex flex-col justify-end">
+<div class="bg-background/80 backdrop-blur-md p-sm border border-surface-variant">
+<p class="font-code-sm text-code-sm text-secondary-container">const GENESIS = (init) =&gt; { return start_here; }</p>
+</div>
+</div>
+<img class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="A futuristic developer workstation with multiple vertical monitors displaying glowing green code and technical schematics in a dark, minimalist room. The lighting is dominated by neon green and electric blue accents against deep black surfaces, creating a high-contrast brutalist aesthetic typical of a high-end tech event." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfBf4zP2nbIdAbjK8eAUWoFuDw5B3EmwaQ5Bb57-wyCXCmRdsPeKEykZOs1E8MvEnM2qgRZVCHuj3Wxwo6uSZqCCVJF08a_Z5shIBiUHX3XSQ0OE4sixpNXKziV42M7Md87sap8TpjsGNvs4xcgENSm_Au648_oBQeEDk8whKbYPhkOoF8MPGVoyEz3LVdnfSZ1MQRX_KuudFenZNQqzI2MLozYOPyNIaXY10M2KTD3SwxP1RNSCEe"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Highlights Section -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop">
+<div class="mb-lg border-b border-surface-variant pb-md flex justify-between items-end">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary">
+                    KEY_FEATURES
+                </h2>
+<div class="font-code-sm text-code-sm text-on-surface-variant">./highlights --verbose</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Feature 00 -->
+<div class="border border-surface-variant p-lg hover:border-secondary-container transition-all duration-300 flex flex-col group">
+<div class="font-display-lg text-headline-lg text-secondary-container mb-sm">00</div>
+<h3 class="font-headline-md text-headline-md text-secondary mb-sm uppercase tracking-tight">Workshops</h3>
+<div class="h-px w-full bg-surface-variant mb-md group-hover:bg-secondary-container transition-colors"></div>
+<p class="font-body-md text-body-md text-primary mb-md">
+                        Hands-on sessions focusing on low-level systems, kernel development, and optimized architecture. No fluff, just raw technical depth.
+                    </p>
+<div class="mt-auto">
+<span class="material-symbols-outlined text-tertiary" data-icon="terminal">terminal</span>
+</div>
+</div>
+<!-- Feature 01 -->
+<div class="border border-surface-variant p-lg hover:border-secondary-container transition-all duration-300 flex flex-col group">
+<div class="font-display-lg text-headline-lg text-secondary-container mb-sm">01</div>
+<h3 class="font-headline-md text-headline-md text-secondary mb-sm uppercase tracking-tight">Networking</h3>
+<div class="h-px w-full bg-surface-variant mb-md group-hover:bg-secondary-container transition-colors"></div>
+<p class="font-body-md text-body-md text-primary mb-md">
+                        Connect with architects of the modern web in a high-density environment designed for deep technical discourse and collaboration.
+                    </p>
+<div class="mt-auto">
+<span class="material-symbols-outlined text-tertiary" data-icon="hub">hub</span>
+</div>
+</div>
+<!-- Feature 02 -->
+<div class="border border-surface-variant p-lg hover:border-secondary-container transition-all duration-300 flex flex-col group">
+<div class="font-display-lg text-headline-lg text-secondary-container mb-sm">02</div>
+<h3 class="font-headline-md text-headline-md text-secondary mb-sm uppercase tracking-tight">Genesis Project</h3>
+<div class="h-px w-full bg-surface-variant mb-md group-hover:bg-secondary-container transition-colors"></div>
+<p class="font-body-md text-body-md text-primary mb-md">
+                        The ultimate hackathon where teams compete to build foundational systems from scratch. Start at zero, end with innovation.
+                    </p>
+<div class="mt-auto">
+<span class="material-symbols-outlined text-tertiary" data-icon="rocket_launch">rocket_launch</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA/Final Banner -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop mb-xl">
+<div class="bg-secondary-container p-xl text-on-secondary-container relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
 
-</body>
-</html>
+</div>
+<div class="relative z-10 text-center flex flex-col items-center">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg mb-md text-on-secondary-container">READY TO INITIALIZE?</h2>
+<p class="font-label-md text-label-md uppercase tracking-[0.3em] mb-lg">Tickets are limited. Secure your spot in the genesis.</p>
+<button class="bg-on-secondary-container text-secondary-container px-xl py-md font-label-md text-label-md uppercase tracking-widest hover:bg-black hover:text-secondary-container transition-all duration-300">
+                        Join DEV[0]
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl border-t-2 border-surface-variant bg-surface-container-lowest px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="font-display-lg text-headline-md text-secondary">DEV[0]</div>
+<div class="flex gap-md">
+<a class="font-code-sm text-code-sm uppercase text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Terminal</a>
+<a class="font-code-sm text-code-sm uppercase text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Documentation</a>
+<a class="font-code-sm text-code-sm uppercase text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Repository</a>
+<a class="font-code-sm text-code-sm uppercase text-on-surface-variant hover:text-tertiary transition-colors opacity-80 hover:opacity-100" href="#">Privacy</a>
+</div>
+<div class="font-code-sm text-code-sm uppercase text-on-surface-variant opacity-80">
+            © 2024 DEV[0] GENESIS. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+<script>
+        // Micro-interactions for terminal effect
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('transition-all', 'duration-700', 'ease-out');
+            });
+        });
+
+        // Floating cursor trail effect for technical vibe
+        const grid = document.querySelector('.terminal-grid');
+        if(grid) {
+            grid.addEventListener('mousemove', (e) => {
+                const rect = grid.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                grid.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(204, 255, 0, 0.05) 0%, transparent 40%), linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px)`;
+                grid.style.backgroundColor = '#121414';
+            });
+        }
+    </script>
+</body></html>
